@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:24px;}h2{margin-top:32px;}img{max-width:100%;height:auto;border:1px solid #ddd;border-radius:6px;}</style>
+</head><body>
+<h1>OCR Pipeline Report — 2025-10-24 10:38</h1>
+<h2>Ingest</h2>
+<p>Original input image read from disk.</p>
+<img src='00_Ingest.png' alt='Ingest'/>
+<h2>Grayscale + Denoise</h2>
+<p>Converted to grayscale and denoised for stable thresholding.</p>
+<img src='01_Grayscale_+_Denoise.png' alt='Grayscale + Denoise'/>
+<h2>Skew Detection</h2>
+<p>Detected line segments; estimated skew angle 0.00°.</p>
+<img src='02_Skew_Detection.png' alt='Skew Detection'/>
+<h2>Otsu Binarization</h2>
+<p>Global thresholding for clean scans.</p>
+<img src='03_Otsu_Binarization.png' alt='Otsu Binarization'/>
+<h2>Sauvola Binarization</h2>
+<p>Local thresholding for uneven illumination.</p>
+<img src='04_Sauvola_Binarization.png' alt='Sauvola Binarization'/>
+<h2>MSER Detections</h2>
+<p>MSER-based text region proposals in natural scenes.</p>
+<img src='05_MSER_Detections.png' alt='MSER Detections'/>
+<h2>Word Grouping</h2>
+<p>Grouped MSER components into word boxes.</p>
+<img src='06_Word_Grouping.png' alt='Word Grouping'/>
+<h2>Glyph Candidates</h2>
+<p>Connected components inside detected regions as glyph candidates.</p>
+<img src='07_Glyph_Candidates.png' alt='Glyph Candidates'/>
+<h2>HOG Features</h2>
+<p>Gradient structure visualization for a sample glyph.</p>
+<img src='08_HOG_Features.png' alt='HOG Features'/>
+<h2>Predictions</h2>
+<p>Overlay predicted words with confidences on word boxes.</p>
+<img src='09_Predictions.png' alt='Predictions'/>
+</body></html>
